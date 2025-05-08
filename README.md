@@ -78,7 +78,30 @@
         }
         ```
 - `PATCH /templates/message/[id]` - Cant patch an pending approval / approved template
-    - 
+    -  ```
+        {
+            [
+                {
+                    "template_name"?: "name",
+                    "template_status"?: "status",
+                    "template_content"?: "status"
+                },
+                ...
+            ]
+        }
+        ```
 - `PATCH /templates/questionare/[id]` - Cant patch an pending approval / approved template
+    -  ```
+        {
+            [
+                {
+                    "template_name"?: "name",
+                    "template_status"?: "status",
+                    "template_content"?: "status"
+                },
+                ...
+            ]
+        }
+        ```
 - `DELETE /templates/message/[id]`
 - `DELETE /templates/questionare/[id]`
