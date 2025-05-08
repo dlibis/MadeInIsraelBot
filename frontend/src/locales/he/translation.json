@@ -1,0 +1,73 @@
+{
+  "common": {
+    "dashboard": "לוח בקרה",
+    "templates": "תבניות",
+    "createNew": "צור חדש",
+    "createTemplate": "צור תבנית",
+    "editTemplate": "ערוך תבנית",
+    "loading": "טוען...",
+    "save": "שמור",
+    "cancel": "ביטול",
+    "delete": "מחק",
+    "edit": "ערוך",
+    "duplicate": "שכפל",
+    "search": "חפש תבניות"
+  },
+  "dashboard": {
+    "title": "לוח בקרה",
+    "subtitle": "צור ונהל תבניות הודעות WhatsApp עבור Twilio",
+    "totalTemplates": "סך הכל תבניות",
+    "draft": "טיוטה",
+    "ready": "מוכן",
+    "approved": "מאושר",
+    "recentTemplates": "תבניות אחרונות",
+    "viewAll": "צפה בהכל",
+    "noTemplates": "אין תבניות עדיין",
+    "createFirstTemplate": "צור את תבנית WhatsApp הראשונה שלך כדי להתחיל"
+  },
+  "templates": {
+    "title": "תבניות",
+    "name": "שם",
+    "category": "קטגוריה",
+    "language": "שפה",
+    "status": "סטטוס",
+    "created": "נוצר",
+    "actions": "פעולות"
+  },
+  "createTemplate": {
+    "title": "צור תבנית",
+    "subtitle": "צור תבנית הודעה חדשה עבור WhatsApp",
+    "templateName": "שם התבנית",
+    "description": "תיאור",
+    "category": "קטגוריה",
+    "language": "שפה",
+    "status": "סטטוס",
+    "components": "רכיבים",
+    "variables": "משתנים",
+    "buttons": "כפתורים",
+    "componentType": "סוג רכיב",
+    "format": "פורמט",
+    "example": "דוגמה (אופציונאלי)",
+    "bodyContent": "תוכן הגוף",
+    "tip": "טיפ: השתמש ב",
+    "toAddVariables": "כדי להוסיף משתנים שניתן להחליף עם נתונים אמיתיים.",
+    "saveTemplate": "שמור תבנית"
+  },
+  "editTemplate": {
+    "title": "ערוך תבנית",
+    "subtitle": "ערוך תבנית הודעת WhatsApp",
+    "saveChanges": "שמור שינויים",
+    "templateNotFound": "התבנית לא נמצאה"
+  },
+  "categories": {
+    "marketing": "שיווק",
+    "utility": "שירותים",
+    "authentication": "אימות"
+  },
+  "statuses": {
+    "pending": "ממתין",
+    "ready": "מוכן",
+    "approved": "מאושר",
+    "rejected": "נדחה"
+  }
+}

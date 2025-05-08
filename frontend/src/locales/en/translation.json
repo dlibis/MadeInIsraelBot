@@ -1,0 +1,73 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "templates": "Templates",
+    "createNew": "Create New",
+    "createTemplate": "Create Template",
+    "editTemplate": "Edit Template",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "search": "Search templates"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Create and manage WhatsApp message templates for Twilio",
+    "totalTemplates": "Total Templates",
+    "draft": "Draft",
+    "ready": "Ready",
+    "approved": "Approved",
+    "recentTemplates": "Recent Templates",
+    "viewAll": "View All",
+    "noTemplates": "No templates yet",
+    "createFirstTemplate": "Create your first WhatsApp template to get started"
+  },
+  "templates": {
+    "title": "Templates",
+    "name": "Name",
+    "category": "Category",
+    "language": "Language",
+    "status": "Status",
+    "created": "Created",
+    "actions": "Actions"
+  },
+  "createTemplate": {
+    "title": "Create Template",
+    "subtitle": "Create a new WhatsApp message template for Twilio",
+    "templateName": "Template Name",
+    "description": "Description",
+    "category": "Category",
+    "language": "Language",
+    "status": "Status",
+    "components": "Components",
+    "variables": "Variables",
+    "buttons": "Buttons",
+    "componentType": "Component Type",
+    "format": "Format",
+    "example": "Example (Optional)",
+    "bodyContent": "Body Content",
+    "tip": "Tip: Use",
+    "toAddVariables": "to add variables that can be replaced with real data.",
+    "saveTemplate": "Save Template"
+  },
+  "editTemplate": {
+    "title": "Edit Template",
+    "subtitle": "Edit WhatsApp message template",
+    "saveChanges": "Save Changes",
+    "templateNotFound": "Template not found"
+  },
+  "categories": {
+    "marketing": "Marketing",
+    "utility": "Utility",
+    "authentication": "Authentication"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "ready": "Ready",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  }
+}
