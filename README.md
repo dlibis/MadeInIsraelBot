@@ -26,88 +26,42 @@
             ]
         }
         ```
-- `GET /tables/[id]/rows` - Table row names
-    -   ```
-        {
-            [
-                {
-                    "row_name": "name",
-                    "row_id":, "id",
-                },
-                ...
-            ]
-        }
-        ```
 - `POST /message` - Template ID, arguments
     - TODO
 
 - `GET /templates`
-    -   ```
-        {
-            [
-                {
-                    "template_name": "name",
-                    "template_id":, "id",
-                    "template_type: "type",
-                    "template_status": "status",
-                    "template_content": "status"
-                },
-                ...
-            ]
+    -   ```go
+        type Template struct {
+            Name      string
+            Id        string
+            Type      interface{}
+            Variables interface{}
         }
         ```
+    - Note: you get a list
+- `GET /templates/[id]/status`
+    -  string
 - `POST /templates/message`
-    -   ```
-        {
-            [
-                {
-                    "template_name": "name",
-                    "template_status": "status",
-                    "template_content": "status"
-                },
-                ...
-            ]
+    -   ```go
+        type CreateMessageTemplate struct {
+            Name      string            `json:"name"`
+            Language  string            `json:"language"`
+            Body      string            `json:"body"`
+            Variables map[string]string `json:"variables"`
+            Image     string            `json:"image"`
         }
         ```
     - Response like `GET /templates` except without the list
 - `POST /templates/questionare`
-    -   ```
-        {
-            [
-                {
-                    "template_name": "name",
-                    "template_status": "status",
-                    "template_content": "status"
-                },
-                ...
-            ]
+    -   ```go
+        type CreateQuestionareTemplate struct {
+            Name      string            `json:"name"`
+            Language  string            `json:"language"`
+            Body      string            `json:"body"`
+            Button    string            `json:"button"`
+            Options   map[string]string `json:"options"`
+            Variables map[string]string `json:"variables"`
         }
         ```
-- `PATCH /templates/message/[id]` - Cant patch an pending approval / approved template
-    -  ```
-        {
-            [
-                {
-                    "template_name"?: "name",
-                    "template_status"?: "status",
-                    "template_content"?: "status"
-                },
-                ...
-            ]
-        }
-        ```
-- `PATCH /templates/questionare/[id]` - Cant patch an pending approval / approved template
-    -  ```
-        {
-            [
-                {
-                    "template_name"?: "name",
-                    "template_status"?: "status",
-                    "template_content"?: "status"
-                },
-                ...
-            ]
-        }
-        ```
-- `DELETE /templates/message/[id]`
-- `DELETE /templates/questionare/[id]`
+    - Response like `GET /templates` except without the list
+- `DELETE /templates/[id]`
