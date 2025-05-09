@@ -101,7 +101,40 @@ type CreateQuestionareTemplate struct {
 }
 
 func (h *handler) HandleQuestionareTemplatesPost(w http.ResponseWriter, r *http.Request) {
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, "Error reading request body", http.StatusInternalServerError)
+		return
+	}
+	defer r.Body.Close() // Close the body when done
 
+	var req_body CreateQuestionareTemplate
+	if err := json.Unmarshal(body, &req_body); err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	template, err := h.twilio_service.CreateQuestionareTemplate(
+		req_body.Name,
+		req_body.Language,
+		req_body.Body,
+		req_body.Button,
+		req_body.Variables,
+		req_body.Options,
+	)
+
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	resp, err := json.Marshal(template)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	w.Write(resp)
 }
 
 func (h *handler) HandleTemplatesDelete(w http.ResponseWriter, r *http.Request) {
