@@ -1,0 +1,1 @@
+docker build --tag "made_in_israel_bot" -f ./build/Dockerfile .

@@ -1,5 +1,11 @@
 # MadeInIsraelBot
 
+### Environment variables
+- `TWILIO_ACCOUNT_SID`
+- `TWILIO_AUTH_TOKEN`
+- `MONDAY_API_TOKEN`
+- `CORS_POLICY`
+
 ### API
 - `GET /tables` - Tables + ID + Names + Views
     - ```
