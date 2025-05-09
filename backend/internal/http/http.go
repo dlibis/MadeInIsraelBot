@@ -31,12 +31,18 @@ func NewServer() Server {
 	api_router := http.NewServeMux()
 
 	// Tables
+	api_router.HandleFunc("GET /ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("pong"))
+	})
+
+	// Tables
 	api_router.HandleFunc("GET /tables", handler.HandleTablesGet)
 
 	// Templates
 	api_router.HandleFunc("GET /templates", handler.HandleTemplatesGet)
-	api_router.HandleFunc("POST /templates", HandleTemplatesPost)
-	api_router.HandleFunc("PATCH /templates", HandleTemplatesPatch)
+	api_router.HandleFunc("GET /templates/{is}/status", handler.HandleTemplateStatus)
+	api_router.HandleFunc("POST /templates/message", handler.HandleMessageTemplatesPost)
+	api_router.HandleFunc("POST /templates/questionare", handler.HandleQuestionareTemplatesPost)
 	api_router.HandleFunc("DELETE /templates/{id}", handler.HandleTemplatesDelete)
 
 	// Messages
