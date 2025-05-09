@@ -1,17 +1,14 @@
 package twilio
 
 import (
-	"encoding/json"
-
 	openapi "github.com/twilio/twilio-go/rest/content/v2"
 )
 
 type Template struct {
-	Name string
-	Id   string
-	Type string
-	// Content   string
-	Variables string
+	Name      string
+	Id        string
+	Type      interface{}
+	Variables interface{}
 }
 
 func (ts *TwilioService) GetTemplates() ([]Template, error) {
@@ -23,39 +20,11 @@ func (ts *TwilioService) GetTemplates() ([]Template, error) {
 
 	var templates []Template
 	for _, template := range messages {
-		typ, err := json.Marshal(*template.Types)
-		if err != nil {
-			return []Template{}, err
-		}
-
-		vars, _ := json.Marshal(*template.Types)
-		if err != nil {
-			return []Template{}, err
-		}
-
 		templates = append(templates, Template{
 			Name:      *template.FriendlyName,
 			Id:        *template.Sid,
-			Type:      string(typ),
-			Variables: string(vars),
-		})
-	}
-
-	return templates, nil
-}
-
-func (ts *TwilioService) GetTemplate(id string) ([]Template, error) {
-	// List messages
-	messages, err := ts.client.ContentV2.ListContent(&openapi.ListContentParams{})
-	if err != nil {
-		return []Template{}, err
-	}
-
-	var templates []Template
-	for _, template := range messages {
-		templates = append(templates, Template{
-			Name: *template.FriendlyName,
-			Id:   *template.Sid,
+			Type:      *template.Types,
+			Variables: *template.Variables,
 		})
 	}
 
