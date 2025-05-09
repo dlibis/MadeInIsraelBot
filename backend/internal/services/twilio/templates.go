@@ -31,20 +31,12 @@ func (ts *TwilioService) GetTemplates() ([]Template, error) {
 	return templates, nil
 }
 
-// func (ts *TwilioService) CreateTemplate() ([]Template, error) {
-// 	// List messages
-// 	messages, err := ts.client.ContentV1.CreateApprovalCreate()
-// 	if err != nil {
-// 		return []Template{}, err
-// 	}
+func (ts *TwilioService) DeleteTemplate(id string) error {
+	// List messages
+	err := ts.client.ContentV1.DeleteContent(id)
+	if err != nil {
+		return err
+	}
 
-// 	var templates []Template
-// 	for _, template := range messages {
-// 		templates = append(templates, Template{
-// 			Name: *template.FriendlyName,
-// 			Id:   *template.Sid,
-// 		})
-// 	}
-
-// 	return templates, nil
-// }
+	return nil
+}

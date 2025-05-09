@@ -37,7 +37,7 @@ func NewServer() Server {
 	api_router.HandleFunc("GET /templates", handler.HandleTemplatesGet)
 	api_router.HandleFunc("POST /templates", HandleTemplatesPost)
 	api_router.HandleFunc("PATCH /templates", HandleTemplatesPatch)
-	api_router.HandleFunc("DELETE /templates", HandleTemplatesDelete)
+	api_router.HandleFunc("DELETE /templates/{id}", handler.HandleTemplatesDelete)
 
 	// Messages
 
